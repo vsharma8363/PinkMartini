@@ -55,7 +55,7 @@ Then all you have to do is run using the following command:
 python3 pinkmartini.py
 ```
 
-Add the bot to any server using the invite URL: ```https://discord.com/api/oauth2/authorize?client_id=**APPLICATION_ID_HERE**&permissions=0&scope=bot%20applications.commands```.
+Add the bot to any server using the invite URL: ```https://discord.com/api/oauth2/authorize?client_id=APPLICATION_ID_HERE&permissions=0&scope=bot%20applications.commands```.
 
 ### Tips & Functionality 💡
 
