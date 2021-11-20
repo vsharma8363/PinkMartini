@@ -11,13 +11,13 @@ Pink Martini Image here
 </p>
 ## Table of Contents 🗂
 
-  * [Description](#Description 📝)<br/>
-  * [Prerequisites](#Prerequisites 💻)<br/>
-  * [Installation](#Installation 📥)<br/>
-  * [Running](#Running 🚀)<br/>
-  * [Contact](#Contact 📫)<br/>
+  * [Description](#description)<br/>
+  * [Prerequisites](#prereqs)<br/>
+  * [Installation](#installation)<br/>
+  * [Running](#running)<br/>
+  * [Contact](#contact)<br/>
 
-## Description 📝
+## <a name="description"></a>Description 📝
 
 After lockdowns, quarantines, mask mandates, and an overall pandemic induced panic, who wants to turn back the clock a little bit?
 
@@ -27,16 +27,16 @@ At 1999! we aim to solve this problem by creating an application that enables pe
 
 You will be able to (things we can do with the app/filters)
 
-## Prerequisites 💻
+## <a name="prereqs"></a>Prerequisites 💻
 
 Before you begin, ensure you have met the following requirements:<br/>
 ✅ &nbsp; You have `Android Studio` installed on your machine <br/>
 ✅ &nbsp; You have a Android Device or Emulator with Android Version 6.0 or above. <br/>
 ✅ &nbsp; You want to party like it's 1999! <br/>
 
-## Installation 📥
+## <a name="installation"></a>Installation 📥
 
-## Running 🚀
+## <a name="running"></a>Running 🚀
 
-## Contact 📫
+##  <a name="contact"></a>Contact 📫
 For any questions, please contact [@vsharma8363](https://github.com/vsharma8363)
