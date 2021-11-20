@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-![Pink Martini](pinkmartini.png)
+![Pink Martini](https://github.com/vsharma8363/PinkMartini/blob/main/pinkmartini.png)
 </p>
 
 ## Table of Contents 🗂
