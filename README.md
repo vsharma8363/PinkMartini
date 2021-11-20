@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-Pink Martini Image here
+![Pink Martini](pinkmartini.png)
 </p>
 
 ## Table of Contents 🗂
@@ -20,13 +20,7 @@ Pink Martini Image here
 
 ## <a name="description"></a>Description 📝
 
-After lockdowns, quarantines, mask mandates, and an overall pandemic induced panic, who wants to turn back the clock a little bit?
-
-Despite being "connected" on our phones 24-7, this past year, many young adults faced an ever increasing feeling of isolation -- a lack of an intimate connection to those they once saw on a daily basis. It doesn't matter how quirky we make our masks or how many Zoom happy hours we attend there is no replacing the genuine connection we were once so famaliar with.
-
-At 1999! we aim to solve this problem by creating an application that enables people to get together in physical spaces post covid-19 -- either through house parties, official events, or kickbacks. We encourage a robust peer-to-peer user engagement and rely on in-app feedback to keep our app safe, functional, and always up to date. 
-
-You will be able to (things we can do with the app/filters)
+Discord application written in Python allowing for Youtube playback and generic URL audio in a server. Queues not enabled... yet.
 
 ## <a name="prereqs"></a>Prerequisites 💻
 
@@ -39,7 +33,40 @@ Before you begin, ensure you have met the following requirements:<br/>
 
 ## <a name="installation"></a>Installation 📥
 
+Install the required libraries (and be sure to install pip3 if you haven't already).
+
+```
+pip3 install discord;
+pip3 install requests;
+pip3 install youtube_dl;
+```
+
 ## <a name="running"></a>Running 🚀
+
+Go to this line in pinkmartini.py and replace 'SUPER SECRET TOKEN GOES HERE' with your token generated earlier.
+
+```
+client.run('SUPER SECRET TOKEN GOES HERE')
+```
+
+Then all you have to do is run using the following command:
+
+```
+python3 pinkmartini.py
+```
+
+Add the bot to any server using the invite URL: ```https://discord.com/api/oauth2/authorize?client_id=**APPLICATION_ID_HERE**&permissions=0&scope=bot%20applications.commands```.
+
+### Tips & Functionality 💡
+
+PinkMartini supports the following
+- ```!play``` examples:
+  - ```!play https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
+  - ```!play http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
+  - ```!play Yesterday-Beatles``` (Search query)
+- ```!pause``` (Pauses current audio)
+- ```!stop``` (Clears the audio player)
+- ```!leave``` (If for some reason you want the bot to leave the channel)
 
 ##  <a name="contact"></a>Contact 📫
 For any questions, please contact [@vsharma8363](https://github.com/vsharma8363)

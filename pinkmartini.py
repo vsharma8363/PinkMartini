@@ -6,25 +6,29 @@ import music_utils
 import constants
 
 client = discord.Client()
-audio_paused = True
-queue = []
-current_song = ''
 
 @client.event
 async def on_ready():
+    global queried_videos
     print('We have logged in as {0.user}'.format(client))
+    queried_videos = None
 
 @client.event
 async def on_message(message):
     # This message came from PinkMartini.
     if message.author == client.user:
         return
-    # A command was sent to PinkMartini.
     elif message.content.startswith(constants.PREFIX):
-        elif message.content.startswith(constants.PLAY_CMD):
+        if message.content.startswith(constants.PLAY_CMD):
             await play(message)
         elif message.content.startswith(constants.PAUSE_CMD):
             await pause(message)
+        elif message.content.startswith(constants.STOP_CMD):
+            await stop(message)
+        elif message.content.startswith(constants.LEAVE_CMD):
+            await leave(message)
+        else:
+            await message.channel.send("That wasn't a valid command")
 
 async def join_if_not_joined(message):
     global voice_channel
@@ -40,12 +44,62 @@ async def join_if_not_joined(message):
     else:
         return
 
-async def resume_playback(message):
+async def play(message):
+    # Join the voice channel if the bot is not already there.
+    await join_if_not_joined(message)
+    # If music is playing right now, stop it.
+    if message.guild.voice_client.is_playing():
+        message.guild.voice_client.stop()
+    # The player most likely wants to resume.
+    if message.content.__eq__(constants.PLAY_CMD) and message.guild.voice_client.is_paused():
+        await resume(message)
+        return
+    # The player is not in the voice chat
+    elif not message.author.voice:
+        return
+    else:
+        user_query = message.content[len(constants.PLAY_CMD) + 1:]
+        # The user provided a Youtube URL.
+        if user_query.startswith('https://www.youtube.com'):
+            await message.channel.send('Playing Youtube Audio...')
+            await playYoutubeAudio(user_query)
+        # The user provided a non-Youtube URL.
+        elif user_query.startswith('https://'):
+            await message.channel.send('Playing Audio From the Internet...')
+            await playGenericAudio(user_query)
+        # The user did not provide a URL, so just try to find the video on Youtube.
+        else:
+            videoURL, videoName = music_utils.getYoutubeVideoSearch(user_query)
+            await message.channel.send(f'I found \'{videoName}\' on Youtube. I\'ll play it now')
+            await playYoutubeAudio(videoURL)
+
+async def resume(message):
     voice_client = message.guild.voice_client
     if voice_client.is_paused():
         voice_client.resume()
+        await message.channel.send("Resuming audio playback")
+    elif voice_client.is_playing():
+        await message.channel.send("Music is playing right now, can't you hear it?")
     else:
         await message.channel.send("Nothing was playing")
+
+async def pause(message):
+    await message.channel.send("Audio paused...")
+    voice_client = message.guild.voice_client
+    if voice_client.is_playing():
+        voice_client.pause()
+
+async def stop(message):
+    await message.channel.send("No more music for you...")
+    voice_client = message.guild.voice_client
+    voice_client.stop()
+
+async def leave(message):
+    voice_client = message.guild.voice_client
+    if voice_client.is_connected():
+        await voice_client.disconnect()
+    else:
+        await message.channel.send("The bot is not connected to a voice channel.")
 
 async def playGenericAudio(URL):
     global voice_channel
@@ -59,57 +113,4 @@ async def playYoutubeAudio(youtubeURL):
         **music_utils.FFMPEG_OPTIONS)
     )
 
-async def query(message):
-    return
-
-
-async def pause(message):
-    await message.channel.send("Audio paused...")
-    voice_client = message.guild.voice_client
-    if voice_client.is_playing():
-        voice_client.pause()
-
-
-async def play(message):
-    await join_if_not_joined(message)
-    if message.content.__eq__(constants.PLAY_CMD): # User wants to resume
-        await resume_playback(message)
-        return
-    user_query = message.content[len(constants.PLAY_CMD) + 1:]
-    # If user is not in chat, don't do anything
-    if not message.author.voice:
-        return
-    elif user_query.startswith('https://www.youtube.com'):
-        await message.channel.send('Playing Youtube Audio...')
-        await playYoutubeAudio(user_query)
-    elif user_query.startswith('https://'):
-        await message.channel.send('Playing Audio From the Internet...')
-        await playGenericAudio(user_query)
-    else:
-        await message.channel.send('I don\'t think that was a URL, but I\'ll see if I can find that for you')
-        await query(user_query)
-
-async def leave(message):
-    voice_client = message.guild.voice_client
-    if voice_client.is_connected():
-        await voice_client.disconnect()
-    else:
-        await message.channel.send("The bot is not connected to a voice channel.")
-
-
-
-
-client.run('API TOKEN HERE')
-
-ytdl_format_options = {
-    'format': 'bestaudio/best',
-    'restrictfilenames': True,
-    'noplaylist': True,
-    'nocheckcertificate': True,
-    'ignoreerrors': False,
-    'logtostderr': False,
-    'quiet': True,
-    'no_warnings': True,
-    'default_search': 'auto',
-    'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
-}
+client.run('SUPER SECRET TOKEN GOES HERE')

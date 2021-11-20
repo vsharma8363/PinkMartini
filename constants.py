@@ -1,5 +1,5 @@
 PREFIX = '!'
 PLAY_CMD = f'{PREFIX}play'
 PAUSE_CMD = f'{PREFIX}pause'
-JOIN_CMD = f'{PREFIX}join'
+STOP_CMD = f'{PREFIX}stop'
 LEAVE_CMD = f'{PREFIX}leave'
