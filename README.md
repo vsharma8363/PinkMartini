@@ -6,7 +6,9 @@
   <img src="https://img.shields.io/badge/Contributers-1-red" />
 </p>
 
-![Pink Martini](https://github.com/vsharma8363/PinkMartini/blob/main/pinkmartini.png?raw=true)
+<p align="center">
+  <img src="https://github.com/vsharma8363/PinkMartini/blob/main/pinkmartini.png?raw=true" />
+</p>
 
 ## Table of Contents 🗂
 
