@@ -31,9 +31,11 @@ You will be able to (things we can do with the app/filters)
 ## <a name="prereqs"></a>Prerequisites 💻
 
 Before you begin, ensure you have met the following requirements:<br/>
-✅ &nbsp; You have `Android Studio` installed on your machine <br/>
-✅ &nbsp; You have a Android Device or Emulator with Android Version 6.0 or above. <br/>
-✅ &nbsp; You want to party like it's 1999! <br/>
+✅ &nbsp; You have `Python 3+` installed on your machine <br/>
+✅ &nbsp; You have setup a Discord bot using the administrator interface <a src="https://discord.com/developers/applications">here</a> <br/>
+✅ &nbsp; You have created a Discord bot and saved the unique token <br/>
+
+**Note:** Do not, under any circumstance, post your Discord bot token on GitHub or otherwise, keep that key private at all costs!
 
 ## <a name="installation"></a>Installation 📥
 
