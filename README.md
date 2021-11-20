@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/vsharma8363/PinkMartini/blob/main/pinkmartini.png?raw=true" />
+  <img src="https://github.com/vsharma8363/PinkMartini/blob/main/image.png?raw=true" />
 </p>
 
 ## Table of Contents 🗂
