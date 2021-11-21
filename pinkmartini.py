@@ -116,4 +116,4 @@ async def playYoutubeAudio(youtubeURL):
         **music_utils.FFMPEG_OPTIONS)
     )
 
-client.run('OTExMzcyNDMyMTg5ODE2ODgy.YZgbuA.fV_Mvpx7C80AXtW_F5l05Py4PdU')
+client.run('DO NOT COMPROMISE')
