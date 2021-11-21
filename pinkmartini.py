@@ -29,6 +29,9 @@ async def on_message(message):
             await leave(message)
         else:
             await message.channel.send("That wasn't a valid command")
+    elif message.content.__eq__("Elizabeth Morgan Til Death"):
+        await message.channel.send("YOU HAVE ACTIVATED LIZZIE BURNETT MODE")
+        await playYoutubeAudio("https://www.youtube.com/watch?v=Uo2yEByF4Mw")
 
 async def join_if_not_joined(message):
     global voice_channel
@@ -113,4 +116,4 @@ async def playYoutubeAudio(youtubeURL):
         **music_utils.FFMPEG_OPTIONS)
     )
 
-client.run('SUPER SECRET TOKEN GOES HERE')
+client.run('OTExMzcyNDMyMTg5ODE2ODgy.YZgbuA.fV_Mvpx7C80AXtW_F5l05Py4PdU')
