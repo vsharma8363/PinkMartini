@@ -20,7 +20,7 @@
 
 ## <a name="description"></a>Description 📝
 
-Discord application written in Python allowing for Youtube playback and generic URL audio in a server. Queues not enabled... yet.
+This is a Discord bot capable of managing a music queue playlist (one per Discord server). This bot also provides premium features like volume control and song skipping/playing/pausing and a couple of other commands outlined below. The goal was to provide those features that usually cost money in a single Open-Source package so anyone can host this bot on their local machine or some headless computer (e.g. Raspberry Pi) and listen to whatever music they'd like.
 
 ## <a name="prereqs"></a>Prerequisites 💻
 
@@ -64,9 +64,13 @@ PinkMartini supports the following
   - ```!play https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
   - ```!play http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
   - ```!play Yesterday-Beatles``` (Search query)
+  - ```!queue``` examples:
+    - ```!queue https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
+    - ```!queue http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
+    - ```!queue Yesterday-Beatles``` (Search query)
+- ```!volume 100``` (Must be value between 1 and 100)
 - ```!pause``` (Pauses current audio)
 - ```!stop``` (Clears the audio player)
-- ```!leave``` (If for some reason you want the bot to leave the channel)
 
 ##  <a name="contact"></a>Contact 📫
 For any questions, please contact [@vsharma8363](https://github.com/vsharma8363)
