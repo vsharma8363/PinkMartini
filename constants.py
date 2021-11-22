@@ -1,5 +1,8 @@
 PREFIX = '!'
 PLAY_CMD = f'{PREFIX}play'
+QUEUE_CMD = f'{PREFIX}queue'
+SKIP_CMD = f'{PREFIX}skip'
+VOLUME_CMD = f'{PREFIX}volume'
 PAUSE_CMD = f'{PREFIX}pause'
 STOP_CMD = f'{PREFIX}stop'
 LEAVE_CMD = f'{PREFIX}leave'
