@@ -64,10 +64,10 @@ PinkMartini supports the following
   - ```!play https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
   - ```!play http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
   - ```!play Yesterday-Beatles``` (Search query)
-  - ```!queue``` examples:
-    - ```!queue https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
-    - ```!queue http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
-    - ```!queue Yesterday-Beatles``` (Search query)
+- ```!queue``` examples:
+  - ```!queue https://www.youtube.com/watch?v=XfR9iY5y94s``` (Youtube URL)
+  - ```!queue http://stream.radioparadise.com/rock-128``` (Generic Audio URL/Online Radio)
+  - ```!queue Yesterday-Beatles``` (Search query)
 - ```!volume 100``` (Must be value between 1 and 100)
 - ```!pause``` (Pauses current audio)
 - ```!stop``` (Clears the audio player)
